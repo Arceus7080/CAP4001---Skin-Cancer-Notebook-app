@@ -372,34 +372,7 @@ li > a:only-child:after { content: ''; }
 }
 
 .banner-top {
-    background: url(../images/d2.jpeg) no-repeat center;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    -moz-background-size: cover;
-}
-
-.banner-top1 {
-    background: url(../images/d3.jpeg) no-repeat center;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    -moz-background-size: cover;
-}
-
-.banner-top2 {
-    background: url(../images/d4.jpeg) no-repeat center;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    -moz-background-size: cover;
-}
-
-.banner-top3 {
-    background: url(../images/d1.jpeg) no-repeat center;
+    background: url(../images/b15.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -434,10 +407,8 @@ li > a:only-child:after { content: ''; }
     vertical-align: middle;
 }
 
-.banner-top,
-.banner-top1,
-.banner-top2,
-.banner-top3 {
+.banner-top
+{
     min-height: 770px;
 }
 .overlay {
