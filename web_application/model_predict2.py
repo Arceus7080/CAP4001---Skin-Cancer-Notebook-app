@@ -33,15 +33,15 @@ import numpy as np
 
 # Define the class names
 class_names = [
-    "actinic keratosis",
-    "basal cell carcinoma",
-    "dermatofibroma",
-    "melanoma",
-    "nevus",
-    "pigmented benign keratosis",
-    "seborrheic keratosis",
-    "squamous cell carcinoma",
-    "vascular lesion"
+    "Actinic Keratosis",
+    "Basal Cell Carcinoma",
+    "Dermatofibroma",
+    "Melanoma",
+    "Nevus",
+    "Pigmented Benign Keratosis",
+    "Seborrheic Keratosis",
+    "Squamous Cell Carcinoma",
+    "Vascular Lesion"
 ]
 
 # Initialize and set the LabelEncoder with the class names

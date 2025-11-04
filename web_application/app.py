@@ -37,14 +37,14 @@ app = Flask(__name__)
 
 @ app.route('/')
 def home():
-    title = 'Vitamin Deficiency Prediction Based on Skin Disease'
+    title = 'Skin Lesion Detection'
     return render_template('index.html', title=title) 
 
 # render crop recommendation form page
 
 @app.route('/disease-predict', methods=['GET', 'POST'])
 def disease_prediction():
-    title = 'Vitamin Deficiency Prediction Based on Skin Disease'
+    title = 'Skin Lesion Detection'
 
     if request.method == 'POST':
         file = request.files.get('file')
@@ -70,39 +70,39 @@ def disease_prediction():
 
 # Disease information for Diabetic Retinopathy
         disease_info = {
-            "actinic keratosis": {
+            "Actinic Keratosis": {
                 "cause": "Pre-cancerous skin condition caused by sun exposure.",
                 "treatment": "Cryotherapy, laser therapy, or topical medications."
             },
-            "basal cell carcinoma": {
+            "Basal Cell Carcinoma": {
                 "cause": "Most common type of skin cancer due to prolonged UV exposure.",
                 "treatment": "Surgical removal, radiation therapy, or targeted drug therapy."
             },
-            "dermatofibroma": {
+            "Dermatofibroma": {
                 "cause": "Benign skin growth caused by fibrous tissue overgrowth.",
                 "treatment": "Usually harmless; surgical removal if necessary."
             },
-            "melanoma": {
+            "Melanoma": {
                 "cause": "Serious skin cancer that develops from melanocytes, often due to excessive sun exposure.",
                 "treatment": "Surgery, immunotherapy, targeted therapy, or chemotherapy."
             },
-            "nevus": {
+            "Nevus": {
                 "cause": "Common mole formed by a cluster of melanocytes.",
                 "treatment": "No treatment required unless changes in size, shape, or color are observed."
             },
-            "pigmented benign keratosis": {
+            "Pigmented Benign Keratosis": {
                 "cause": "Non-cancerous, pigmented skin growth due to aging.",
                 "treatment": "Cryotherapy, laser treatment, or removal if bothersome."
             },
-            "seborrheic keratosis": {
+            "Seborrheic Keratosis": {
                 "cause": "Common non-cancerous skin growth, often in older adults.",
                 "treatment": "Usually requires no treatment; can be removed for cosmetic reasons."
             },
-            "squamous cell carcinoma": {
+            "Squamous Cell Carcinoma": {
                 "cause": "Second most common type of skin cancer caused by sun exposure.",
                 "treatment": "Surgical removal, radiation therapy, or chemotherapy."
             },
-            "vascular lesion": {
+            "Vascular Lesion": {
                 "cause": "Abnormal blood vessel formations on the skin.",
                 "treatment": "Laser therapy or minor surgery if needed."
             }
