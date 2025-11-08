@@ -1,0 +1,119 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<style>
+    /* Custom styles for this page */
+    body {
+        background-color: #f8f9fa; /* Fallback color */
+        
+
+        background-image: url("{{ url_for('static', filename='images/b15.jpg') }}"); /* Path to your background image */
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: #ffffff; /* Default text color for the page content, assuming a darker background image */
+    }
+
+    .main-content-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+        min-height: calc(100vh - 150px);
+        margin-bottom: 30px;
+    }
+
+    .prediction-card {
+        max-width: 500px;
+        width: 90%;
+        padding: 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+        background-color: rgba(255, 255, 255, 0.95);
+        color: #343a40;
+    }
+
+    .prediction-card h2,
+    .prediction-card h4 {
+        color: #343a40;
+        margin-bottom: 20px;
+    }
+
+    .form-control-file {
+        border: 1px solid #ced4da;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #e9ecef;
+        color: #495057;
+    }
+
+    #output-image {
+        width: 200px; /* Set a fixed width for the rectangular box */
+        height: 150px; /* Set a fixed height for the rectangular box */
+        display: block;
+        margin: 20px auto;
+        border: 1px dashed #ced4da;
+        background-color: white;
+        
+        /* --- START OF CHANGE --- */
+        object-fit: contain; /* Changed from 'cover' to 'contain' */
+        object-position: center;
+        /* --- END OF CHANGE --- */
+
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .btn-predict {
+        background-color: #ffea00;
+        border-color: #ffea00;
+        color: #343a40;
+        font-weight: bold;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+    .btn-predict:hover {
+        background-color: #e6d300;
+        border-color: #e6d300;
+        color: #343a40;
+    }
+    
+</style>
+
+<div class="main-content-wrapper">
+    <div class="container d-flex flex-column align-items-center justify-content-center flex-grow-1">
+        <h2 class="text-center mb-4" style="font-size: 1.5rem; font-style: italic; text-shadow: 0 0 0.95px black;">
+            <b>Skin Lesion Detection Using Deep Learning</b>
+        </h2>
+
+        <div class="card prediction-card">
+            <div class="card-body text-center">
+                <h4 class="card-title mb-4" style="font-size: 1.4rem;"><b>Please Upload A Clear Image</b></h4>
+
+                <form class="form-signin" method="post" enctype="multipart/form-data">
+                    <div class="form-group mb-4">
+                        <label for="inputfile" class="sr-only">Upload Image</label>
+                        <input type="file" name="file" class="form-control-file" id="inputfile" onchange="preview_image(event)" accept="image/*">
+                    </div>
+
+                    <div id="image-preview-container">
+                        <img id="output-image" class="img-fluid rounded" alt="Image Preview" src="{{ url_for('static', filename='images/b14.png') }}" />
+                    </div>
+
+                    <button class="btn btn-lg btn-block mt-4 btn-predict" type="submit">Predict</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function preview_image(event) {
+        var reader = new FileReader();
+        reader.onload = function () {
+            var output = document.getElementById('output-image');
+            output.src = reader.result;
+        }
+        reader.readAsDataURL(event.target.files[0]);
+    }
+</script>
+{% endblock %}
