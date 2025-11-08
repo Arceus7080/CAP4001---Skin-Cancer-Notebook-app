@@ -1,11 +1,10 @@
 # Importing essential libraries and modules
 
-from flask import Flask, render_template, request, Markup
+from flask import Flask, render_template, request
 import numpy as np
 #import pandas as pd
 import os
 import requests
-import config
 import pickle
 import io
 from PIL import Image
@@ -24,7 +23,7 @@ from reportlab.pdfgen import canvas
 
 
 
-from model_predict2  import pred_skin_disease
+from model_predict_E  import pred_skin_disease
 
 # ===============================================================================================
 # ------------------------------------ FLASK APP -------------------------------------------------
